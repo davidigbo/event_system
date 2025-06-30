@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  before_action :require_organizer, only: [:new, :create , :edit, :update, :detroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
+
   def index
     @events = Event.all
   end
