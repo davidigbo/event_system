@@ -50,3 +50,6 @@ group :development do
   gem "web-console"
 end
 
+gem "bcrypt"
+gem "jwt"
+gem "sidekiq"
