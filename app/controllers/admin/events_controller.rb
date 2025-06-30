@@ -1,5 +1,6 @@
-class EventsController < ApplicationController
-  before_action :require_organizer, only: [:new, :create , :edit, :update, :destroy]
+module Admin
+  class EventsController < Admin::ApplicationController
+    before_action :require_organizer, only: [:new, :create , :edit, :update, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -53,5 +54,6 @@ class EventsController < ApplicationController
     unless current_user.organizer?
       redirect_to events_path, alert: 'Access denied'
     end
+  end
   end
 end

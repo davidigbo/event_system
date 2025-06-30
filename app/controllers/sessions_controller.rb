@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   def new
+    return redirect_to events_path if current_user
+  render :new
   end
 
   def create
@@ -8,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, notice: 'logged in!'
     else
-      flash.now[:alert] = 'Invalid eamil or password'
+      flash.now[:alert] = 'Invalid email or password'
       render :new
     end
   end

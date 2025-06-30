@@ -53,3 +53,5 @@ end
 gem "bcrypt"
 gem "jwt"
 gem "sidekiq"
+gem "tailwindcss-rails"
+gem "administrate"
